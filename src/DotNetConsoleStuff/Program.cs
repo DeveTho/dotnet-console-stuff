@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace DotNetConsoleStuff
 {
@@ -6,7 +6,7 @@ namespace DotNetConsoleStuff
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Startup.Configure();
         }
     }
 }

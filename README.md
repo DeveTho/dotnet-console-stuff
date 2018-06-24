@@ -21,10 +21,12 @@ A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dep
     * Add a dummy `message` property to the appsettings
 * Add reference to `System.Configuration`
 * Add following package references:
+
 ```xml
 <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.1.1" />
 <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
 ```
+
 * Create static `Startup` class
   * Create public method `void Configure()`
   * Create private method `IConfiguration SetupConfiguration()`
@@ -32,3 +34,4 @@ A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dep
   * Temporarily `Console.WriteLine()` message property
   * Call Startup in Program.Main()
   * Run app
+  * Edit EnvironmentName and rerun (also with an unknown value)
