@@ -36,7 +36,7 @@ _Startup configuration_
   * Temporarily `Console.WriteLine()` message property
   * Call Startup in Program.Main()
   * Run app
-  * Edit EnvironmentName and rerun (also with an unknown value)
+  * Edit EnvironmentName and rerun (also with an unknown value) _(Rebuild can be necessary!)_
 
 **Dependency injection**
 
@@ -68,4 +68,16 @@ _Startup configuration_
 * In `Program.Main()`, create a scope from the `IServiceProvider` returned from the `Startup.Configure()` method
   * Resolve the `IApplication` from the scope as a `RequiredService`
   * Call the `Run()` method
-  * Run the app (with different environment names)
+  * Run the app (with different environment names) _(Rebuild can be necessary!)_
+
+---
+
+**Logging (when still time)**
+
+* Add following package reference:
+
+```xml
+<PackageReference Include="Serilog" Version="2.7.1" />
+<PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
+<PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+```
