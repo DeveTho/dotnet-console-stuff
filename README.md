@@ -27,6 +27,8 @@ A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dep
 <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
 ```
 
+_Startup configuration_
+
 * Create static `Startup` class
   * Create public method `void Configure()`
   * Create private method `IConfiguration SetupConfiguration()`
@@ -54,4 +56,9 @@ A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dep
 * Inject the IAppSettings in the constructor of Application + add property
   * Write the AppSettings message in `Application.Run()` using `Console.WriteLine()`
   * Remove the `Console.WriteLine()` in the `Startup` class
-* Further configure `Startup` class
+
+_Startup configuration_
+
+* Create private method `ServiceProvider ConfigureDependencyInjection(IConfiguration configuration)`
+    * Create new `ServiceCollection`
+    * Get the AppSettings from the Configuration object and register the instance as a singleton
