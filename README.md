@@ -52,4 +52,6 @@ A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dep
   * Add a property `string Message { get; }`
     * Also add a `set` in the class!
 * Inject the IAppSettings in the constructor of Application + add property
+  * Write the AppSettings message in `Application.Run()` using `Console.WriteLine()`
+  * Remove the `Console.WriteLine()` in the `Startup` class
 * Further configure `Startup` class

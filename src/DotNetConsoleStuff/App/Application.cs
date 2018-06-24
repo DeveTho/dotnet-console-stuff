@@ -11,7 +11,7 @@ namespace DotNetConsoleStuff.App
 
         public void Run()
         {
-            throw new System.NotImplementedException();
+            System.Console.WriteLine(AppSettings.Message);
         }
     }
 }

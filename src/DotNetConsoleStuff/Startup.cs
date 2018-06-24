@@ -9,8 +9,6 @@ namespace DotNetConsoleStuff
         public static void Configure()
         {
             var configuration = SetupConfiguration();
-
-            System.Console.WriteLine(configuration["message"]);
         }
 
         private static IConfiguration SetupConfiguration()
