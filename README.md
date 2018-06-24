@@ -28,3 +28,4 @@ A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dep
 * Create static `Startup` class
   * Create public method `void Configure()`
   * Create private method `IConfiguration SetupConfiguration()`
+  * Implement SetupConfiguration method
