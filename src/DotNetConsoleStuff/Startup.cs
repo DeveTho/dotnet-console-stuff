@@ -1,6 +1,7 @@
 using DotNetConsoleStuff.App;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 using System;
 using System.Configuration;
 using System.IO;
@@ -32,6 +33,15 @@ namespace DotNetConsoleStuff
         private static IServiceProvider ConfigureDependencyInjection(IConfiguration configuration)
         {
             var services = new ServiceCollection();
+
+            services.AddLogging(loggingBuilder =>
+            {
+                var serilog = new LoggerConfiguration()
+                    .WriteTo.Console()
+                    .CreateLogger();
+
+                loggingBuilder.AddSerilog(serilog);
+            });
 
             var appsettings = configuration.Get<AppSettings>();
             services.AddSingleton<IAppSettings>(appsettings);

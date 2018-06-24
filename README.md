@@ -72,12 +72,18 @@ _Startup configuration_
 
 ---
 
-**Logging (when still time)**
+**Logging (if there's still enthusiasm :) )**
 
+* Using `Serilog` for logging implementation, but the abstract `ILogger<>` from Microsoft to call logging methods
 * Add following package reference:
 
 ```xml
+<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
 <PackageReference Include="Serilog" Version="2.7.1" />
 <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
 <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
 ```
+
+* Configure the logger in the `Startup class`
+  * `AddLogging()` on the `ServiceCollection`
+  * Configure Serilog to `WriteTo.Console()`
