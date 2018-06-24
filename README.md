@@ -11,3 +11,8 @@ A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dep
 * Add appsettings.json file + environment specific + update csproj for nesting and CopyToOutputDirectory
     * Add a dummy `message` property to the appsettings
 * Add reference to `System.Configuration`
+* Add following package references:
+```xml
+<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.1.1" />
+<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+```
