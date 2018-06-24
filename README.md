@@ -87,3 +87,4 @@ _Startup configuration_
 * Configure the logger in the `Startup class`
   * `AddLogging()` on the `ServiceCollection`
   * Configure Serilog to `WriteTo.Console()`
+* Inject `ILogger<Application>` in the constructor of Application + add property
