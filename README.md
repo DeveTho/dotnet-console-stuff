@@ -59,7 +59,13 @@ _Startup configuration_
 
 _Startup configuration_
 
-* Create private method `ServiceProvider ConfigureDependencyInjection(IConfiguration configuration)`
+* Create private method `IServiceProvider ConfigureDependencyInjection(IConfiguration configuration)`
     * Create new `ServiceCollection`
     * Get the AppSettings from the Configuration object and register the instance as a singleton
-    * Register Application as a scopes service.
+    * Register Application as a scopes service
+    * Return the built `IServiceProvider` object, and specify to validate scopes
+    * Call the DI method in `Startup.Configure()` and return the I`ServiceProvider` object.
+* In `Program.Main()`, create a scope from the `IServiceProvider` returned from the `Startup.Configure()` method
+  * Resolve the `IApplication` from the scope as a `RequiredService`
+  * Call the `Run()` method
+  * Run the app (with different environment names)

@@ -1,6 +1,7 @@
 using DotNetConsoleStuff.App;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Configuration;
 using System.IO;
 
@@ -8,9 +9,12 @@ namespace DotNetConsoleStuff
 {
     public static class Startup
     {
-        public static void Configure()
+        public static IServiceProvider Configure()
         {
             var configuration = SetupConfiguration();
+            var serviceProvider = ConfigureDependencyInjection(configuration);
+
+            return serviceProvider;
         }
 
         private static IConfiguration SetupConfiguration()
@@ -25,7 +29,7 @@ namespace DotNetConsoleStuff
             return configurationBuilder.Build();
         }
 
-        private static ServiceProvider ConfigureDependencyInjection(IConfiguration configuration)
+        private static IServiceProvider ConfigureDependencyInjection(IConfiguration configuration)
         {
             var services = new ServiceCollection();
 
@@ -33,6 +37,8 @@ namespace DotNetConsoleStuff
             services.AddSingleton<IAppSettings>(appsettings);
 
             services.AddScoped<IApplication, Application>();
+
+            return services.BuildServiceProvider(validateScopes: true);
         }
     }
 }
