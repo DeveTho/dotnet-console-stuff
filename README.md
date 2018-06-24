@@ -40,6 +40,7 @@ _Startup configuration_
 
 **Dependency injection**
 
+* Using the default DI provider from Microsoft here, but others (like Autofac, StructureMap, ...) can of course be used as well
 * Add following package reference:
 
 ```xml
