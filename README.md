@@ -1,6 +1,6 @@
 # DotNetConsoleStuff
 
-A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dependency injection and logging as by default used in ASP.NET Core.
+A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dependency injection and logging as by default used in ASP.NET Core, using the separately available NuGet packages.
 
 ---
 
@@ -43,3 +43,13 @@ A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dep
 ```xml
 <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
 ```
+
+* Add an `IApplication` interface and an `Application` class in the `App` folder
+  * These are the main entry point of the app and will further resolve any other dependencies by themselves  
+  * Add a method `void Run()`
+* Add an `IAppSettings` interface and an `AppSettings` class in the `App` folder
+  * They will match our specified properties in appsettings.json as a strongly typed model, and are injectable
+  * Add a property `string Message { get; }`
+    * Also add a `set` in the class!
+* Inject the IAppSettings in the constructor of Application + add property
+* Further configure `Startup` class
