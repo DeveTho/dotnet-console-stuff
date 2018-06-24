@@ -15,7 +15,7 @@ namespace DotNetConsoleStuff.App
 
         public void Run()
         {
-            System.Console.WriteLine(AppSettings.Message);
+            Logger.LogInformation(AppSettings.Message);
         }
     }
 }

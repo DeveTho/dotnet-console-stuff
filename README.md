@@ -88,3 +88,5 @@ _Startup configuration_
   * `AddLogging()` on the `ServiceCollection`
   * Configure Serilog to `WriteTo.Console()`
 * Inject `ILogger<Application>` in the constructor of Application + add property
+  * Replace `Console.WriteLine()` by a call on the logger
+* Run the app (with different environment names) _(Rebuild can be necessary!)_
