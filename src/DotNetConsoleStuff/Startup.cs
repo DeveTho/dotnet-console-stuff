@@ -31,6 +31,8 @@ namespace DotNetConsoleStuff
 
             var appsettings = configuration.Get<AppSettings>();
             services.AddSingleton<IAppSettings>(appsettings);
+
+            services.AddScoped<IApplication, Application>();
         }
     }
 }

@@ -62,3 +62,4 @@ _Startup configuration_
 * Create private method `ServiceProvider ConfigureDependencyInjection(IConfiguration configuration)`
     * Create new `ServiceCollection`
     * Get the AppSettings from the Configuration object and register the instance as a singleton
+    * Register Application as a scopes service.
