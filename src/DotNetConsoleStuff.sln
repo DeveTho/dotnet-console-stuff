@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetConsoleStuff", "DotNetConsoleStuff\DotNetConsoleStuff.csproj", "{643DA63F-A99F-4DC6-A28F-5100129F0072}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9EFC0D19-4DE5-489E-8666-680D30B3D96B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{643DA63F-A99F-4DC6-A28F-5100129F0072} = {9EFC0D19-4DE5-489E-8666-680D30B3D96B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {021FE07D-39F2-4866-9115-030A41CF5DB8}
