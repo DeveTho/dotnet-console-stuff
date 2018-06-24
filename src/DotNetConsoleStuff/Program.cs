@@ -1,4 +1,5 @@
-using System;
+using DotNetConsoleStuff.App;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DotNetConsoleStuff
 {
@@ -6,7 +7,13 @@ namespace DotNetConsoleStuff
     {
         static void Main(string[] args)
         {
-            Startup.Configure();
+            var serviceProvider = Startup.Configure();
+
+            using (var scope = serviceProvider.CreateScope())
+            {
+                var app = scope.ServiceProvider.GetRequiredService<IApplication>();
+                app.Run();
+            }
         }
     }
 }
