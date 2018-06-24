@@ -35,3 +35,11 @@ A .NET console app (targeting .NET Framework 4.6.2) that uses configuration, dep
   * Call Startup in Program.Main()
   * Run app
   * Edit EnvironmentName and rerun (also with an unknown value)
+
+**Dependency injection**
+
+* Add following package reference:
+
+```xml
+<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+```
