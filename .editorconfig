@@ -36,3 +36,7 @@ insert_final_newline = true
 # Bash Files
 [*.sh]
 end_of_line = lf
+
+# .NET formatting settings:
+[*.{cs,vb}]
+dotnet_sort_system_directives_first = true
